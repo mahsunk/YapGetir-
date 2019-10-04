@@ -1,0 +1,40 @@
+﻿@model List<Tedarikci>
+@{
+    ViewBag.Title = "Tedarikçilerim";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>FİRMA ADI</th>
+                            <th>ADRES</th>
+                            <th>ŞEHİR</th>
+                            <th>TELEFON NO</th>
+                            <th>ÜLKE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Tedarikci item in Model)
+                        {
+                            <tr>
+                                <td>@item.TedarikciFirmaAdi</td>
+                                <td>@item.Adres</td>
+                                <td>@item.Şehir</td>
+                                <td>@item.TelefonNO</td>
+                                <td>@item.Ulke</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

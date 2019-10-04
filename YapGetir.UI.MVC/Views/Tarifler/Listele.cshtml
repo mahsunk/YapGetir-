@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listele</h2>
+
+<div class="row">
+    @model List<Tarif>
+   
+    @foreach (Tarif item in Model)
+    {
+
+   
+
+        <div class="col-lg-3  ">
+            <div class="thumbnail">
+                <img src="https://via.placeholder.com/150" style="width:300px;height:200px; " alt="...">
+                <div class="caption">
+                    <center>
+                        @*<h3>@item.KategoriAdi</h3>*@
+                        @Html.ActionLink(item.TarifAdi, "MalzemeListele", new { tarifID = item.ID,tarifAdi=item.TarifAdi })
+                    </center>
+
+                </div>
+            </div>
+        </div>
+
+
+
+    }
+</div>

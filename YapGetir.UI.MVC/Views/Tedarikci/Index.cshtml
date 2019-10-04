@@ -1,0 +1,117 @@
+﻿@model List<Malzeme>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tedarikci</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-2">
+            <img src="~/Content/images/restoran/person.png" style="width:150px"/>
+            <h3 class="text-center">@{UyeFormu uye = (UyeFormu)Session["tedarikciKullanici"];} @uye.UyeAdi.ToUpper()</h3>
+            <input type="submit" value="PROFİLİM" class="btn btn-primary btn-block" />
+            @Html.ActionLink("ÇIKIŞ", "Cikis", "Tedarikci", new { area = "" }, new { @class = "btn btn-primary btn-block" })
+
+        </div>
+        <div class="col-lg-6"> </div>
+        <div class="col-lg-4">
+            @Html.ActionLink("Yapgetir.Com Mesaj Gönder", "YapGetirMesajGonder", "Tedarikci", new { area = "" }, new { @class = "btn btn-primary btn-block" })
+            @Html.ActionLink("Restorana Mesaj Gönder", "RestoranaMesajGonder", "Tedarikci", new { area = "" }, new { @class = "btn btn-primary btn-block" })
+
+            @*<input type="submit" value="Yapgetir.Com Mesaj Gönder" class="btn btn-primary btn-block" />*@
+            @*<input type="submit" value="Restorana Mesaj Gönder" class="btn btn-primary btn-block" />*@
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading text-center">YAPGETİR.COM SİPARİŞLERİ</div>
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Ürün Adı</th>
+                                    <th>Miktari</th>
+                                    <th class="text-center">Siparişi Onayla</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (Malzeme item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.MalzemeAdi</td>
+                                        <td>@(item.MalzemeMiktari + " " + item.MazlemeOlcumu)</td>
+                                        <td>
+                                            <center>
+                                                <label class="btn btn-success text-center">
+                                                    @Html.CheckBox("Onayla", false, new { @class = "btn btn-success btn-lg" })
+                                                </label>
+                                            </center>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading text-center">RESTORAN SİPARİŞLERİ</div>
+                        <!-- Table -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Restoran Adı</th>
+                                    <th>Ürün Adı</th>
+                                    <th>Miktari</th>
+                                    <th class="text-center">Siparişi Onayla</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sütiş Restoran</td>
+                                    <td>Süt</td>
+                                    <td>10 kg</td>
+                                    <td>
+                                        <center>
+                                            <label class="btn btn-success text-center">
+                                                @Html.CheckBox("Onayla", false, new { @class = "btn btn-success btn-lg" })
+                                            </label>
+                                        </center>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nusr-et </td>
+                                    <td>Et</td>
+                                    <td>100 kg</td>
+                                    <td>
+                                        <center>
+                                            <label class="btn btn-success text-center">
+                                                @Html.CheckBox("Onayla", false, new { @class = "btn btn-success btn-lg" })
+                                            </label>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

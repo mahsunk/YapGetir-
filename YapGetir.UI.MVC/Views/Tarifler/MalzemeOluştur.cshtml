@@ -1,0 +1,83 @@
+﻿@model List<Malzeme>
+
+@{
+    ViewBag.Title = "MalzemeOluştur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MalzemeOluştur</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Malzeme Adi</th>
+                    <th>Mazleme Olcusu</th>
+                    <th>Malzeme Miktari</th>
+                    <th>Malzeme Tutari</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="button" onclick="malEkle()" value="Ekle" /></td>
+                    <td>
+                        @Html.DropDownListFor(x => x.MalzemeAdi, (IEnumerable<SelectListItem>)ViewBag.Tipler, "Lütfen Seçiniz", new { @class = "form-control" })
+
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.MazlemeOlcumu, new { htmlAttributes = new { Placeholder = "MazlemeOlcumu", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MazlemeOlcumu, "", new { @class = "text-danger" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.MalzemeMiktari, new { htmlAttributes = new { Placeholder = "MalzemeMiktari", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MalzemeMiktari, "", new { @class = "text-danger" })
+                    </td>
+                    <td>
+                        @Html.EditorFor(model => model.MalzemeTutari, new { htmlAttributes = new { Placeholder = "MalzemeTutari", @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.MalzemeTutari, "", new { @class = "text-danger" })
+                    </td>
+
+                </tr>
+                @foreach (Malzeme item in Model)
+                {
+
+                <tr>
+                    <td><input type="button" value="sil" /></td>
+                    <td>@item.MalzemeAdi</td>
+                    <td>@item.MazlemeOlcumu</td>
+                    <td>@item.MalzemeMiktari</td>
+                    <td>@item.MalzemeTutari</td>
+                </tr>
+
+                }
+
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+
+                    <td colspan="5"> <input type="submit" value="Malzeme Olustur" class="btn btn-default" /></td>
+
+                </tr>
+               
+
+            </tfoot>
+        </table>
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Geri", "TarifOlustur")
+</div>
+

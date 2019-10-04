@@ -1,0 +1,55 @@
+﻿@model ICollection<YapGetir.DTO.UyeSiparislerDTO>
+@{
+    ViewBag.Title = "ProfilDuzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Siparislerim</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>*@
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+                <h3>Siparislerim</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Tarif Adı</td>
+                            <td>Açıklama</td>
+                            <td>Restoran Adı</td>
+                            <td>Asci Adı Soyadı</td>
+                            <td>Ödeme Tipi</td>
+                            <td>Tutar</td>
+                            <td>Restorana Mesaj Gönder</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TarifAdi</td>
+                                <td>@item.TarifAciklama</td>
+                                <td>@item.RestoranAdi</td>
+                                <td>@item.AsciAdiSoyadi</td>
+                                <td>@item.OdemeTipi</td>
+                                <td>@item.Tutar</td>
+                                <td>
+                                    @Html.ActionLink("Mesaj Gönder", "MesajGonder", new { RestoranAdi = item.RestoranAdi }, new { @class = "btn btn-success" }) @*Bu kullanım şeklini unutma !!!*@
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+@*</body>
+</html>*@

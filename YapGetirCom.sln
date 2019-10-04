@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.Core", "YapGetir.Core\YapGetir.Core.csproj", "{24DB4502-AFC7-4405-9C54-BD4D913B4458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.Model", "YapGetir.Model\YapGetir.Model.csproj", "{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.DAL", "YapGetir.DAL\YapGetir.DAL.csproj", "{8C62A5B3-9FB3-4231-AB50-673E7657D22B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.BLL", "YapGetir.BLL\YapGetir.BLL.csproj", "{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.UI.MVC", "YapGetir.UI.MVC\YapGetir.UI.MVC.csproj", "{6D6C2AEE-DFCF-4924-A20B-50157C4F3407}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YapGetir.DTO", "YapGetir.DTO\YapGetir.DTO.csproj", "{1F822CB5-E8C1-46E9-B467-D34296D22951}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24DB4502-AFC7-4405-9C54-BD4D913B4458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DB4502-AFC7-4405-9C54-BD4D913B4458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DB4502-AFC7-4405-9C54-BD4D913B4458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24DB4502-AFC7-4405-9C54-BD4D913B4458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C62A5B3-9FB3-4231-AB50-673E7657D22B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C62A5B3-9FB3-4231-AB50-673E7657D22B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C62A5B3-9FB3-4231-AB50-673E7657D22B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C62A5B3-9FB3-4231-AB50-673E7657D22B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D6C2AEE-DFCF-4924-A20B-50157C4F3407}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D6C2AEE-DFCF-4924-A20B-50157C4F3407}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D6C2AEE-DFCF-4924-A20B-50157C4F3407}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D6C2AEE-DFCF-4924-A20B-50157C4F3407}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F822CB5-E8C1-46E9-B467-D34296D22951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F822CB5-E8C1-46E9-B467-D34296D22951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F822CB5-E8C1-46E9-B467-D34296D22951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F822CB5-E8C1-46E9-B467-D34296D22951}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {773FF2E5-C3AC-4650-A767-73E133B1BAD6}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/mahsumkarakoyunn
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = YapGetir.Core\\YapGetir.Core.csproj
+		SccProjectName1 = YapGetir.Core
+		SccLocalPath1 = YapGetir.Core
+		SccProjectUniqueName2 = YapGetir.Model\\YapGetir.Model.csproj
+		SccProjectName2 = YapGetir.Model
+		SccLocalPath2 = YapGetir.Model
+		SccProjectUniqueName3 = YapGetir.DAL\\YapGetir.DAL.csproj
+		SccProjectName3 = YapGetir.DAL
+		SccLocalPath3 = YapGetir.DAL
+		SccProjectUniqueName4 = YapGetir.BLL\\YapGetir.BLL.csproj
+		SccProjectName4 = YapGetir.BLL
+		SccLocalPath4 = YapGetir.BLL
+		SccProjectUniqueName5 = YapGetir.UI.MVC\\YapGetir.UI.MVC.csproj
+		SccProjectName5 = YapGetir.UI.MVC
+		SccLocalPath5 = YapGetir.UI.MVC
+		SccProjectUniqueName6 = YapGetir.DTO\\YapGetir.DTO.csproj
+		SccProjectName6 = YapGetir.DTO
+		SccLocalPath6 = YapGetir.DTO
+	EndGlobalSection
+EndGlobal

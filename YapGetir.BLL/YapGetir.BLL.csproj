@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10EB3530-26FA-4FEE-8AFA-7CFBE339A0A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YapGetir.BLL</RootNamespace>
+    <AssemblyName>YapGetir.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.0.0\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abstract\IAsciService.cs" />
+    <Compile Include="Abstract\IBaseService.cs" />
+    <Compile Include="Abstract\IKampanyaService.cs" />
+    <Compile Include="Abstract\IKategoriService.cs" />
+    <Compile Include="Abstract\IKategoriTurService.cs" />
+    <Compile Include="Abstract\IMalzemeService.cs" />
+    <Compile Include="Abstract\IOdemeService.cs" />
+    <Compile Include="Abstract\IPaylasmaService.cs" />
+    <Compile Include="Abstract\IPuanlamaService.cs" />
+    <Compile Include="Abstract\IRestoranService.cs" />
+    <Compile Include="Abstract\ISiparisService.cs" />
+    <Compile Include="Abstract\ITarifService.cs" />
+    <Compile Include="Abstract\ITedarikciService.cs" />
+    <Compile Include="Abstract\IUrunService.cs" />
+    <Compile Include="Abstract\IUyeFormuService.cs" />
+    <Compile Include="Abstract\IUyeTipService.cs" />
+    <Compile Include="Abstract\IYorumService.cs" />
+    <Compile Include="Concrete\AsciService.cs" />
+    <Compile Include="Concrete\KampanyaService.cs" />
+    <Compile Include="Concrete\KategoriService.cs" />
+    <Compile Include="Concrete\KategoriTurService.cs" />
+    <Compile Include="Concrete\MalzemeService.cs" />
+    <Compile Include="Concrete\OdemeService.cs" />
+    <Compile Include="Concrete\PaylasmaService.cs" />
+    <Compile Include="Concrete\PuanlamaService.cs" />
+    <Compile Include="Concrete\RestoranService.cs" />
+    <Compile Include="Concrete\SiparisService.cs" />
+    <Compile Include="Concrete\TarifService.cs" />
+    <Compile Include="Concrete\TedarikciService.cs" />
+    <Compile Include="Concrete\UrunService.cs" />
+    <Compile Include="Concrete\UyeFormuService.cs" />
+    <Compile Include="Concrete\UyeTipService.cs" />
+    <Compile Include="Concrete\YorumService.cs" />
+    <Compile Include="IoC\Ninject\CustomDALModule.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YapGetir.Core\YapGetir.Core.csproj">
+      <Project>{24DB4502-AFC7-4405-9C54-BD4D913B4458}</Project>
+      <Name>YapGetir.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetir.DAL\YapGetir.DAL.csproj">
+      <Project>{8c62a5b3-9fb3-4231-ab50-673e7657d22b}</Project>
+      <Name>YapGetir.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YapGetir.Model\YapGetir.Model.csproj">
+      <Project>{3D2DA3C8-FCC2-4B64-8A7A-945746A23B69}</Project>
+      <Name>YapGetir.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Html.Partial("~/Views/Shared/_IndexKismi.cshtml")
+
+
+@model YapGetir.UI.MVC.Models.LoginDTO
+
+@section SolDiv
+        {
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3>Kullanıcı Giriş Ekranı</h3>
+
+                </div>
+                <div class="panel-body">
+                    @using (Html.BeginForm("index", "Home", FormMethod.Post))
+                    {
+
+                        <fieldset>
+                            <p>
+                                <label>Kullanıcı Adı:</label>
+
+                                @if (Session["beniHatırla"] != null)
+                                {
+                                    @Html.TextBoxFor(b => b.Username, new { @class = "form-control", @Value = (Session["beniHatırla"] as UyeFormu).KullaniciAdi });
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(b => b.Username, new { @class = "form-control" })
+                                }
+
+
+                            </p>
+                            <p>
+                                <label>Password:</label>
+                                @if (Session["beniHatırla"] != null)
+                                {
+                                    @Html.TextBoxFor(b => b.Password, new { @class = "form-control", @Value = (Session["beniHatırla"] as UyeFormu).Sifre });
+                                }
+                                else
+                                {
+                                    @Html.TextBoxFor(b => b.Password, new { @class = "form-control", @type = "password" })
+                                }
+                            </p>
+
+                            <p> @Html.ActionLink("Şifremi Unuttum", "SifreUnuttum", "Home")</p>
+                            <p class="checkbox">
+                                <label>
+                                    Beni Hatırla
+                                </label>    @Html.CheckBoxFor(x => x.Isaretlendimi)
+                            </p>
+                            <p>
+                                <input type="submit" name="name" value="GİRİŞ YAP" class="btn btn-success" />
+                            </p>
+                            <p>
+                                <label>Üyeliğiniz Yok mu?</label>&emsp; @*<a href="#">Yeni Üyelik</a>*@ @Html.ActionLink("Yeni Üyelik", "Register", "User")
+                            </p>
+                        </fieldset>
+                        <div>
+                            @if (ViewBag.Error != null)
+                            {
+                                <span>@ViewBag.Error</span>
+                            }
+                        </div>
+                    }
+                </div>
+                <div class="panel-footer">
+
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    
+    
+
+        
+    
+   
+
+
+}
+

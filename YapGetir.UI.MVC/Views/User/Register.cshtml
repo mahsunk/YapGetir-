@@ -1,0 +1,117 @@
+﻿@model UyeFormu
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        div a {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Kayıt Ekranı</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="background-color:white">
+                <a href="/Home"><img src="https://via.placeholder.com/150" style="width:265px ; height:80px; border-radius:25px;" /></a>
+
+
+            </div>
+            <div class="col-lg-9"></div>
+
+        </div>
+        <hr />
+        <h3>ÜYE OL</h3>
+        <div >
+            @if (ViewBag.Error != null)
+            {
+                <span class="alert alert-danger">@ViewBag.Error</span>
+            }
+        </div>
+        <hr />
+
+
+
+  
+
+            @using (Html.BeginForm("Register", "User", FormMethod.Post))
+            {
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Eposta</label>
+                    @*<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Eposta">*@
+                    @Html.TextBoxFor(a => a.KullaniciAdi, new { placeholder = "Email", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Şifre</label>
+                    @Html.TextBoxFor(a => a.Sifre, new { placeholder = "Şifre", @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Ad</label>
+                    @Html.TextBoxFor(a => a.UyeAdi, new { placeholder = "Lütfen Adınızı Giriniz", @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Soyad</label>
+                    @Html.TextBoxFor(a => a.UyeSoyadi, new { placeholder = "Lütfen Soyadınızı Giriniz", @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+                    <label>Doğum Tarihi</label>
+                    @Html.TextBoxFor(a => a.DogumTarihi, new { type = "Date", @class = "form-control" })
+                </div>
+
+                <div class="form-group">
+
+                    <label>Üye Tipi</label>
+                    @Html.DropDownList("TipID", (IEnumerable<SelectListItem>)ViewBag.Tipler, "Lütfen Seçiniz", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.TipID, "", new { @class = "text-danger" })
+
+                </div>
+
+                <div class="form-group">
+                    <label>Semtiniz</label>
+                    @Html.TextBoxFor(a => a.Semt, new { placeholder = "Lütfen Semtinizi Giriniz", @class = "form-control" })
+                </div>
+
+
+
+
+                
+               
+                <button type="submit" class="btn btn-default">ÜYE OL</button>
+            }
+      
+
+
+        <footer>
+            <hr />
+            <div class="bs-example">
+                <ul class="nav nav-pills">
+                    <li><a href="#">RESTORAN GİRİŞ</a></li>
+                    <li><a href="#">MUTFAK&RESTORAN</a></li>
+                    <li><a href="#">İLETİŞİM</a></li>
+                    <li><a href="#">TEDARİKÇİ GİRİŞ</a></li>
+                    <li><a href="#">RESTORAN SİPARİŞ TAKİP</a></li>
+                    <li><a href="#">SÖZLEŞME</a></li>
+
+
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+    
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+</body>
+</html>

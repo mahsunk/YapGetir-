@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Restorana Mesaj Gonder</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="col-lg-4">
+        @ViewBag.Mesaj
+    </div>
+    <div class="col-lg-8">
+        <div class="col-lg-1"><br /></div>
+        <div class="col-lg-4">
+            <p>@Html.ActionLink("Anasayfaya Dön", "Index", "Tedarikci", new { area = "" }, new { @class = "btn btn-primary"})</p>
+            <h4>Restorana Mesaj Gonder</h4>
+            <p><input style="width:500px;" placeholder="Mesaj Başlığı" /></p>
+            <p><textarea style="width:500px; height:500px" placeholder="İçerik"></textarea></p>
+            <p><input type="submit" onclick="MesajGonder()" class="btn btn-primary" /></p>
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script>
+        function MesajGonder() {
+            alert("Mesaj gönderildi");
+        }
+    </script>
+</body>
+
+</html>

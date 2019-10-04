@@ -1,0 +1,67 @@
+﻿@model YapGetir.Model.UyeFormu
+
+@{
+    ViewBag.Title = "Profil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Profil</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UyeAdi)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).UyeAdi)</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UyeSoyadi)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).UyeSoyadi)</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).KullaniciAdi)</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).Sifre)</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semt)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).Semt)</label>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DogumTarihi)
+        </dt>
+
+        <dd>
+            <label>@((Session["kullanici"] as UyeFormu).DogumTarihi.ToLongDateString())</label>
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Profili Düzenle", "ProfilDuzenle", new {  uyeID =((Session["kullanici"] as UyeFormu).ID) }) |
+    @Html.ActionLink("Geri", "Index","User")
+</p>

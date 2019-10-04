@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="bs-example">
+    <ul class="nav nav-tabs">
+        <li class="active">@Html.ActionLink("Tarif Kategorileri", "Index", "Tarifler")</li>
+        <li>@Html.ActionLink("Tarif Oluştur","TarifOlustur","Tarifler")</li>
+
+    </ul>
+    <div class="row">
+        @model List<Kategori>
+      
+        @foreach (Kategori item in Model)
+        {
+
+
+
+            <div class="col-lg-3  ">
+                <div class="thumbnail">
+                    <img src="https://via.placeholder.com/150" style="width:300px;height:200px; " alt="...">
+                    <div class="caption">
+                        <center>
+                            @*<h3><a href="">@item.TurAdi</a></h3>*@
+                           @Html.ActionLink(item.KategoriAdi, "Listele", new { catID = item.ID })
+                        </center>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        }
+    </div>
+
+
+        <div class="row">
+            <br />
+           
+           
+            
+            
+        </div>
+    </div>

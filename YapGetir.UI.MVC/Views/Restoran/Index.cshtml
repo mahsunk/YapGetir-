@@ -1,0 +1,130 @@
+﻿@model  YapGetir.UI.MVC.Models.SiparisMultiModel
+
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout2.cshtml";
+}
+
+
+<div class="container">
+    @*bu container içinde dto kullanarak çektiğimiz verieri yazdırdık.*@
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="panel panel-default">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Sipariş Veren</th>
+                            <th>Gelen Sipariş - Açıklama</th>
+                            <th>Aşcı Adı Soyadı</th>
+                            <th class="text-center">Siparişi Onayla</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (YapGetir.DTO.SiparisDTO item in Model.siparisDTO) //birden çok model gönderirsen böyle yazacaksın => yapgetir.dto.siparisdto item in model.siparisdto
+                        {
+                            <tr>
+                                <td>@item.UyeAdiSoyadi</td>
+                                <td>@(item.TarifAdi + " - " + item.TarifAciklama)</td>
+                                <td>@item.AsciAdiSoyadi</td>
+                                <td>
+                                    <center>
+                                        <label class="btn btn-success text-center">
+                                            <input type="checkbox" class="test" id="test" value="@item.SiparisID" onchange="onayla(@item.SiparisID)" />
+                                            @*@Html.CheckBox("Onayla", false, new { siparisID = item.SiparisID })*@
+                                        </label>
+                                    </center>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+
+        function onayla(siparisID) {
+            if ($(document.getElementsByClassName("test")).is(":checked"))
+            {
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("Onayla","Restoran")',
+                    data: { id: siparisID },
+                    success: function (data) {
+                        alert("Sipariş Onaylandı.");
+                    }
+                })
+            }
+            else {
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("OnayKaldir", "Restoran")',
+                    data: { id: siparisID },
+                    success: function (data) {
+                        alert("Sipariş Onayı Kaldırıldı.");
+                    }
+                })
+            }
+        }
+
+
+        //.Onay yerinde input[type = 'checkbox'] yazarsanda yakalıyor checkbox'ı
+        @*$("input[type = 'checkbox']").change(function (siparisID) {
+
+            if ($(this).is(":checked"))
+            {
+                alert(siparisID)
+                $.ajax({
+                    type: "Post",
+                    url: '@Url.Action("Onayla","Restoran")',
+                    data: { id: siparisID },
+                    success: function (data) {
+                        alert("Sipariş Onaylandı.");
+                    }
+                })
+            }
+            else {
+                alert("unchecked" + siparisID)
+            }*@
+       /* })*/  //Kaynak : https://forums.asp.net/t/2078931.aspx
+
+    </script>
+}
+
+@*<div class="container"> @*Bu cantainer içinde id ile DTO kullanmadan gelen verileri yazdık.
+        <div class="row">
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>SİPARİŞ VEREN</th>
+                                <th>GELEN SİPARİŞLER</th>
+                                <th>SİPARİŞİ ONAYLA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (Siparis item in Model.siparis)
+                            {
+                                <tr>
+                                    <td>@item.UyeFormu.UyeAdi</td>
+                                    <td>@item.Tarif.TarifAdi</td>
+                                    <td>@item.Asci.AsciAdi</td>
+                                    <td>Cehckbox gelecek</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>*@

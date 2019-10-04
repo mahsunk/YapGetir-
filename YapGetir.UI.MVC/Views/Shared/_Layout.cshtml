@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <style>
+        div a {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3" style="background-color:white">
+
+                <img src="https://via.placeholder.com/150" style="width:265px ; height:80px; border-radius:25px;" />
+            </div>
+            <div class="col-lg-9" style="background-color:white">
+                <div class="col-lg-12" style="margin-top:30px">
+
+
+                    <td colspan="9" height="35">
+                        <b>
+                            &nbsp;
+                            <nobr>
+                                | @Html.ActionLink("ANASAYFA", "Index", "User") |
+                                @Html.ActionLink("ÜRÜNLER", "Index", "Home") |
+                                @Html.ActionLink("TARİFLER", "Index", "Tarifler") |
+                                @Html.ActionLink("RESTORANTLAR", "Index", "RESTORANTLAR") |
+                                @Html.ActionLink("FAVORİLER", "Index", "FAVORİLER") |
+                                @Html.ActionLink("KAMPANYALAR", "Index", "KAMPANYALAR") |
+                                @Html.ActionLink("SİPARİŞLERİM", "Siparislerim", "User") |
+                               
+
+
+
+
+                            </nobr>
+                        </b>
+                    </td>
+                </div>
+            </div>
+
+        </div>
+       
+
+        <div class="col-lg-12"><br /></div>
+        <div class="row">
+            <div class="col-lg-3">
+               
+                    @RenderSection("SolDiv", false)
+
+                
+                
+                    @Html.Partial("~/Views/Shared/_Sepet.cshtml")
+               
+
+            </div>
+            <div class="col-lg-9">
+                <div class="container">
+                    <div class="row">
+
+
+                        @RenderBody()
+
+
+                        <footer>
+                            <hr />
+                            <div class="bs-example">
+                                <ul class="nav nav-pills">
+                                    <li><a href="/Restoran/Index">RESTORAN GİRİŞ</a></li>
+                                    <li><a href="#">MUTFAK&RESTORAN</a></li>
+                                    <li><a href="#">İLETİŞİM</a></li>
+                                    <li><a href="/Tedarikci/Index">TEDARİKÇİ GİRİŞ</a></li>
+                                    <li><a href="#">RESTORAN SİPARİŞ TAKİP</a></li>
+                                    <li><a href="#">SÖZLEŞME</a></li>
+                                
+                                   
+                                </ul>
+                            </div>
+
+                        </footer>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

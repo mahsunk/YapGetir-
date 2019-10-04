@@ -1,0 +1,26 @@
+﻿
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-primary">
+          
+            
+            <div class="panel-footer">
+                <div class="btn-group ">
+                    
+                    <button style="width:205px;" type="button" href="/User/Profil" class ="btn btn-primary"> @((Session["kullanici"] as UyeFormu).UyeAdi) @((Session["kullanici"] as UyeFormu).UyeSoyadi)</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Profil", "Profil", "User")</li>
+                        <li>@Html.ActionLink("Cık", "Cikis", "User")</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
